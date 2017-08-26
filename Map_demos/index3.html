@@ -1,0 +1,43 @@
+<!DOCTYPE html>    
+<html>    
+<title>地图API进行地理定位实例</title>    
+    <head>    
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=HWo4eIvjfEvcomCBbm2zfnB914I0zmIj&s=1；"></script>    
+    </head>    
+    <body style="">    
+        <p><button onclick="geoFindMe()">Show my location</button></p>
+		<div id="out"><div>   
+    </body>  
+    <script>
+		function geoFindMe() {
+		  var output = document.getElementById("out");
+
+		  if (!navigator.geolocation){
+		    output.innerHTML = "<p>您的浏览器不支持地理位置</p>";
+		    return;
+		  }
+
+		  function success(position) {
+		    var latitude  = position.coords.latitude;
+		    var longitude = position.coords.longitude;
+
+		    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+
+		    // var img = new Image();
+		    // img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+		    // output.appendChild(img);
+		  };
+
+		  function error() {
+		    output.innerHTML = "无法获取您的位置";
+		  };
+
+		  output.innerHTML = "<p>Locating…</p>";
+
+		  navigator.geolocation.getCurrentPosition(success, error);
+		}
+    	
+    </script>
+</html>  
