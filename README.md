@@ -1,10 +1,12 @@
 # h5API_demos
-<br>
+
 ## demo1 -- baiduMap_api使用
-<br>
+
 ### 获取 Javascript API 服务方法 
 使用百度地图 V2.0版本的引用方式： 
+```javascript
 <script src="http://api.map.baidu.com/api?v=2.0&ak=yourAppKey" type="text/javascript"></script> （v2.0的版本需要申请密钥（key））
+```
 ### 创建地图容器元素
 地图需要一个 HTML 元素作为容器，这样才能展现到页面上。这里我们创建了一个 div 元素。
 ### 命名空间 
